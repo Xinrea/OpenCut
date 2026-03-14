@@ -21,6 +21,10 @@ async function fetchFromMarble<T>({
 }: {
 	endpoint: string;
 }): Promise<T> {
+	// In embedded desktop mode, the API URL/key may be empty - skip blog fetching
+	if (!url || !key) {
+		return null as unknown as T;
+	}
 	try {
 		const response = await fetch(`${url}/${key}/${endpoint}`);
 		if (!response.ok) {
