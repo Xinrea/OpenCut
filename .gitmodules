@@ -1,0 +1,3 @@
+[submodule "src-tauri/opencut"]
+	path = src-tauri/opencut
+	url = https://github.com/Xinrea/OpenCut.git
